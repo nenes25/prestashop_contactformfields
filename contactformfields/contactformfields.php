@@ -90,8 +90,8 @@ class contactformfields extends Module {
         
         if ( Tools::getValue('additionnal_info1') )
             $emailContent.= 'Additionnal Field 1 : '.Tools::getValue('additionnal_info1').'<br />';
-        if ( Tools::getValue('additionnal_info1') )
-            $emailContent.= 'Additionnal Field 1 : '.Tools::getValue('additionnal_info1');
+        if ( Tools::getValue('additionnal_info2') )
+            $emailContent.= 'Additionnal Field 2 : '.Tools::getValue('additionnal_info2');
         
         $emailContent .= '</span>';
         
