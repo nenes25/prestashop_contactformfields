@@ -169,7 +169,7 @@ class ContactController extends ContactControllerCore{
                     
                     //On crée un hook personnalisé pour ajouter les nouvelles informations à l'email
                     //Le hook passe la reference de la variable
-                    HookCore::exec('actionAddContactFormFieldsToEmail',array('var_list' => &$var_list));
+                    Hook::exec('actionAddContactFormFieldsToEmail',array('var_list' => &$var_list));
                     
                     if (empty($contact->email)) {
                         Mail::Send($this->context->language->id, 'contact_form', ((isset($ct) && Validate::isLoadedObject($ct)) ? sprintf(Mail::l('Your message has been correctly sent #ct%1$s #tc%2$s'), $ct->id, $ct->token) : Mail::l('Your message has been correctly sent')), $var_list, $from, null, null, null, $file_attachment);
