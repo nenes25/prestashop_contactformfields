@@ -23,7 +23,7 @@ class ContactFormFieldsTest extends PHPUnit_Framework_TestCase {
         $this->_baseDir = str_replace('modules/'.$this->_moduleName, '', trim(shell_exec('pwd')));
         
         //Instanciation du module
-        $this->_moduleInstance = ModuleCore::getInstanceByName($this->_moduleName);
+        $this->_moduleInstance = Module::getInstanceByName($this->_moduleName);
         
         parent::__construct($name, $data, $dataName);
     }
@@ -33,7 +33,7 @@ class ContactFormFieldsTest extends PHPUnit_Framework_TestCase {
      * @group contactformfields_install
      */
     public function testModuleIsInstalled() {
-        $this->assertTrue(ModuleCore::isInstalled($this->_moduleName));
+        $this->assertTrue(Module::isInstalled($this->_moduleName));
     }
 
     /**
@@ -57,8 +57,8 @@ class ContactFormFieldsTest extends PHPUnit_Framework_TestCase {
      */
     public function testNewHooksExist() {
         
-        $this->assertNotFalse(HookCore::getIdByName('contactFormAdditionnalFields'));
-        $this->assertNotFalse(HookCore::getIdByName('actionAddContactFormFieldsToEmail'));
+        $this->assertNotFalse(Hook::getIdByName('contactFormAdditionnalFields'));
+        $this->assertNotFalse(Hook::getIdByName('actionAddContactFormFieldsToEmail'));
     }
     
     /**
